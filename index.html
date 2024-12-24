@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LyngoDuel - Technical Showcase</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            mermaid.initialize({
+                startOnLoad: true,
+                theme: 'default',
+                themeVariables: {
+                    primaryColor: '#6366f1',
+                    primaryTextColor: '#333',
+                    primaryBorderColor: '#818cf8',
+                    lineColor: '#6366f1',
+                }
+            });
+        });
+    </script>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #818cf8;
+            --accent: #e0e7ff;
+            --text: #1f2937;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background: var(--gray-50);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 2rem 1rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 2rem;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-text {
+            color: var(--white);
+            padding-right: 2rem;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .video-wrapper {
+            width: min(360px, 100%);
+            background: var(--text);
+            border-radius: 30px;
+            padding: 10px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .video-container {
+            width: 100%;
+            height: min(750px, 80vh);
+            border-radius: 20px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+            gap: 2rem;
+            padding: 4rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
+        }
+
+        .feature-card p {
+            color: var(--text);
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            line-height: 1.6;
+        }
+
+        .architecture-section {
+            background: var(--white);
+            padding: 4rem 1rem;
+            margin: 4rem auto;
+            border-radius: clamp(15px, 3vw, 30px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            overflow-x: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            width: 100%;
+        }
+
+        .section-title h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            color: var(--primary);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+
+        .mermaid {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            min-width: 100%;
+        }
+
+        .mermaid svg {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            justify-content: flex-start;
+        }
+
+        @media (max-width: 1024px) {
+            .tech-badges {
+                justify-content: center;
+            }
+        }
+
+        .tech-badge {
+            background: var(--accent);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .status-section {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, var(--accent) 0%, #f5f3ff 100%);
+            border-radius: clamp(15px, 3vw, 30px);
+            margin: 4rem auto;
+            max-width: 1200px;
+            box-shadow: 0 4px 20px -5px rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(99, 102, 241, 0.1);
+        }
+
+        .status-section h2 {
+            font-size: clamp(1.75rem, 4vw, 2.25rem);
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+
+        .status-section p {
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .status-section .tech-badge {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            font-weight: 600;
+            display: inline-block;
+            box-shadow: 0 4px 15px -3px rgba(99, 102, 241, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .status-section .tech-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px -4px rgba(99, 102, 241, 0.4);
+        }
+
+        footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text {
+                padding-right: 0;
+            }
+
+            .video-wrapper {
+                margin: 0 auto;
+            }
+
+            .tech-badges {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section {
+                padding: 1rem;
+            }
+
+            .features-grid {
+                padding: 2rem 1rem;
+            }
+
+            .feature-card {
+                padding: 1.5rem;
+            }
+
+            .architecture-section {
+                margin: 2rem 1rem;
+                padding: 2rem 1rem;
+            }
+
+            .status-section {
+                margin: 2rem 1rem;
+                padding: 2rem 1rem;
+            }
+        }
+
+        /* Mermaid diagram responsiveness */
+        .mermaid {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .mermaid svg {
+            min-width: 600px;
+            max-width: 100%;
+            height: auto;
+        }
+        button{
+          border-width: 0;
+          cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>LyngoDuel</h1>
+                <p>Experience real-time multiplayer word battles in this cutting-edge mobile game powered by SignalR and React Native</p>
+                <div class="tech-badges">
+                    <span class="tech-badge">.Net Core</span>
+                    <span class="tech-badge">React Native</span>
+                    <span class="tech-badge">SignalR</span>
+                    <span class="tech-badge">Real-time</span>
+                    <span class="tech-badge">Multiplayer</span>
+                    <span class="tech-badge">Single Player</span>
+                </div>
+            </div>
+            <div class="video-wrapper">
+                <div class="video-container">
+                    <video autoplay muted loop playsinline>
+                        <source src="/WhatsApp Video 2024-12-24 at 13.15.59.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="features-grid">
+        <div class="feature-card">
+            <h3>Real-time Multiplayer</h3>
+            <p>Experience seamless 1v1 battles with real-time updates powered by SignalR's WebSocket-based communication system. Enjoy synchronized gameplay with instant state updates and responsive player interactions.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Game Management</h3>
+            <p>Robust backend system handling game state management, scoring systems, and player matching mechanisms. Ensures fair and competitive gameplay with real-time synchronization.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Player Profiles</h3>
+            <p>Comprehensive user authentication system with detailed player statistics, profile tracking, and dynamic ranking system. Compare your performance and climb the leaderboards.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Optimized Performance</h3>
+            <p>Built with React Native for smooth cross-platform performance. Features fluid animations, responsive design, and optimized connection management for an uninterrupted gaming experience.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Interactive Gameplay</h3>
+            <p>Engaging word puzzle challenges with instant feedback, real-time score updates, and interactive game elements. Test your word skills against other players in fast-paced duels.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Session Management</h3>
+            <p>Advanced game session handling with post-game ranking updates, comprehensive match history, and detailed performance analytics for each player.</p>
+        </div>
+    </div>
+
+    <div class="architecture-section">
+        <div class="section-title">
+            <h2>System Architecture</h2>
+        </div>
+        <div class="mermaid">
+            classDiagram
+                class Hubs {
+                    GameHub
+                    MatchHub
+                }
+
+                class Controllers {
+                    AuthController
+                    ConfirmController
+                    InfosController
+                    QuestionController
+                    SettingsController
+                    TestController
+                }
+
+                class Services {
+                    AuthService
+                    MailJetService
+                    MatchService
+                    QuestionService
+                    TokenService
+                    UserRankService
+                    WordBox
+                }
+
+                class DTOs {
+                    AddQuestionDto
+                    ConfirmAccountRequestDto
+                    GenerateQuestionForMatchDto
+                    LoginDto
+                    MatchDto
+                    TokenDto
+                    UserRankDto
+                }
+
+                Hubs --> Services : uses
+                Controllers --> Services : uses
+                Services --> DTOs : handles
+                Controllers --> DTOs : processes
+                
+                note for Hubs "Real-time communication layer"
+                note for Controllers "REST API layer"
+                note for Services "Business logic layer"
+                note for DTOs "Data transfer layer"
+        </div>
+    </div>
+
+    <div class="status-section">
+        <h2>Development Status</h2>
+        <p>All improvements have been completed and the game is now available in closed testing environment on Google Play</p>
+        <div class="tech-badge">Applied for Production</div>
+    </div>
+    <div class="status-section">
+     <h2>Join as a tester</h2>
+     <p>Play our game before anyone else by joining our testers by sending us an e-mail</p>
+     <button onclick="sendEmail()" class="tech-badge">Join</button>
+     </div>
+   
+</body>
+
+<script>
+     function sendEmail() {
+            window.location.href = "mailto:huseyincorakli46@gmail.com?subject=I%20Want%20to%20be%20a%20tester&body=Hi,%0D%0A%0D%0AI%20want%20to%20test%20your%20game.%20My%20email%20address%20is:";
+        }
+ </script>
+</html>
+
