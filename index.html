@@ -184,12 +184,6 @@
             justify-content: flex-start;
         }
 
-        @media (max-width: 1024px) {
-            .tech-badges {
-                justify-content: center;
-            }
-        }
-
         .tech-badge {
             background: var(--accent);
             color: var(--primary);
@@ -230,21 +224,28 @@
             line-height: 1.7;
         }
 
-        .status-section .tech-badge {
-            background: var(--primary);
+        .google-play-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: #000000;
             color: var(--white);
             padding: 0.75rem 1.5rem;
-            border-radius: 25px;
-            font-size: clamp(0.9rem, 2vw, 1rem);
+            border-radius: 12px;
+            font-size: 1.1rem;
             font-weight: 600;
-            display: inline-block;
-            box-shadow: 0 4px 15px -3px rgba(99, 102, 241, 0.3);
+            text-decoration: none;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .status-section .tech-badge:hover {
+        .google-play-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px -4px rgba(99, 102, 241, 0.4);
+            box-shadow: 0 6px 20px -4px rgba(0, 0, 0, 0.2);
+        }
+
+        .google-play-button svg {
+            width: 24px;
+            height: 24px;
         }
 
         footer {
@@ -286,7 +287,6 @@
             width: 20px;
             height: 20px;
         }
-   
 
         @media (max-width: 1024px) {
             .hero-content {
@@ -331,7 +331,6 @@
             }
         }
 
-        /* Mermaid diagram responsiveness */
         .mermaid {
             width: 100%;
             overflow-x: auto;
@@ -342,10 +341,6 @@
             min-width: 600px;
             max-width: 100%;
             height: auto;
-        }
-        button{
-          border-width: 0;
-          cursor: pointer;
         }
     </style>
 </head>
@@ -367,7 +362,7 @@
             <div class="video-wrapper">
                 <div class="video-container">
                     <video autoplay muted loop playsinline>
-                         <source src="/lyngo-app/WhatsApp Video 2024-12-24 at 13.15.59.mp4" type="video/mp4">
+                        <source src="/lyngo-app/WhatsApp Video 2024-12-24 at 13.15.59.mp4" type="video/mp4">
                     </video>
                 </div>
             </div>
@@ -454,41 +449,31 @@
     </div>
 
     <div class="status-section">
-        <h2>Development Status</h2>
-        <p>All improvements have been completed and the game is now available in closed testing environment on Google Play</p>
-        <div class="tech-badge">Applied for Production</div>
+        <h2>Now Available on Google Play!</h2>
+        <p>Experience the ultimate word battle game - download LyngoDuel now and challenge players worldwide!</p>
+        <a href="https://play.google.com/store/apps/details?id=com.crklih.WordDuelApp" target="_blank" class="google-play-button">
+            <svg xmlns="http://www.w3.org/2000/svg" height="800" width="1200" id="svg60" version="1.1" viewBox="-4.12599 -7.65905 35.75858 45.9543"><defs id="defs38"><linearGradient gradientUnits="userSpaceOnUse" y2="21.86" x2="-5.9" y1="1.87" x1="14.09" id="linear-gradient"><stop id="stop4" stop-color="#008eff" offset="0"/><stop id="stop6" stop-color="#008fff" offset=".01"/><stop id="stop8" stop-color="#00acff" offset=".26"/><stop id="stop10" stop-color="#00c0ff" offset=".51"/><stop id="stop12" stop-color="#00cdff" offset=".76"/><stop id="stop14" stop-color="#00d1ff" offset="1"/></linearGradient><linearGradient gradientUnits="userSpaceOnUse" y2="15.32" x2="-2.37" y1="15.32" x1="26.45" id="linear-gradient-2"><stop id="stop17" stop-color="#ffd800" offset="0"/><stop id="stop19" stop-color="#ff8a00" offset="1"/></linearGradient><linearGradient gradientUnits="userSpaceOnUse" y2="45.15" x2="-9.41" y1="18.05" x1="17.69" id="linear-gradient-3"><stop id="stop22" stop-color="#ff3a44" offset="0"/><stop id="stop24" stop-color="#b11162" offset="1"/></linearGradient><linearGradient gradientUnits="userSpaceOnUse" y2="3.81" x2="8.92" y1="-8.29" x1="-3.19" id="linear-gradient-4"><stop id="stop27" stop-color="#328e71" offset="0"/><stop id="stop29" stop-color="#2d9571" offset=".07"/><stop id="stop31" stop-color="#15bd74" offset=".48"/><stop id="stop33" stop-color="#06d575" offset=".8"/><stop id="stop35" stop-color="#00de76" offset="1"/></linearGradient><style id="style2">.cls-7{opacity:.07}</style></defs><g transform="translate(.004)" id="g58"><g id="g56"><path id="path40" d="M.55.48A2.39 2.39 0 000 2.15v26.34a2.41 2.41 0 00.55 1.67l.09.09 14.75-14.76v-.35L.64.39z" fill="url(#linear-gradient)"/><path id="path42" d="M20.31 20.41l-4.92-4.92v-.35l4.92-4.91.11.06 5.83 3.31c1.67.94 1.67 2.49 0 3.44l-5.83 3.31z" fill="url(#linear-gradient-2)"/><path id="path44" d="M20.42 20.35l-5-5L.55 30.16a2 2 0 002.45.07l17.39-9.88" fill="url(#linear-gradient-3)"/><path id="path46" d="M20.42 10.29L3 .4A1.93 1.93 0 00.55.48l14.84 14.84z" fill="url(#linear-gradient-4)"/><path id="path48" d="M20.31 20.24L3 30.06a2 2 0 01-2.39 0l-.09.09.09.09a2 2 0 002.39 0l17.39-9.88z" opacity=".1"/><path id="path50" d="M.55 30A2.43 2.43 0 010 28.32v.17a2.41 2.41 0 00.55 1.67l.09-.09z" class="cls-7"/><path id="path52" d="M26.25 16.86l-5.94 3.38.11.11L26.25 17a2.11 2.11 0 001.25-1.72 2.21 2.21 0 01-1.25 1.58z" class="cls-7"/><path id="path54" d="M3 .58l23.25 13.19a2.2 2.2 0 011.25 1.55 2.09 2.09 0 00-1.25-1.72L3 .4C1.36-.54 0 .24 0 2.15v.17C0 .42 1.36-.37 3 .58z" fill="#fff" opacity=".3"/></g></g></svg>
+            Get it on Google Play
+        </a>
     </div>
-    <div class="status-section">
-     <h2>Join as a tester</h2>
-     <p>Play our game before anyone else by joining our testers by sending us an e-mail</p>
-     <button onclick="sendEmail()" class="tech-badge">Join</button>
-     </div>
 
-     <footer>
-          <div class="footer-content">
-              <div class="social-links">
-                  <a href="https://github.com/huseyincorakli" target="_blank" class="social-link">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-                      GitHub
-                  </a>
-                  <a href="https://linkedin.com/in/huseyincorakli" target="_blank" class="social-link">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-                      LinkedIn
-                  </a>
-                  <a href="mailto:huseyincorakli46@gmail.com" class="social-link">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                      Email
-                  </a>
-              </div>
-          </div>
-      </footer>
-   
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://github.com/huseyincorakli" target="_blank" class="social-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                    GitHub
+                </a>
+                <a href="https://linkedin.com/in/huseyincorakli" target="_blank" class="social-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                    LinkedIn
+                </a>
+                <a href="mailto:huseyincorakli46@gmail.com" class="social-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    Email
+                </a>
+            </div>
+        </div>
+    </footer>
 </body>
-
-<script>
-     function sendEmail() {
-            window.location.href = "mailto:huseyincorakli46@gmail.com?subject=I%20Want%20to%20be%20a%20tester&body=Hi,%0D%0A%0D%0AI%20want%20to%20test%20your%20game.%20My%20email%20address%20is:";
-        }
- </script>
 </html>
-
